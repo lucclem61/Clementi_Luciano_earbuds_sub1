@@ -1,11 +1,200 @@
+@use "../abstracts" as *; // I import $container-max here
+
+/* buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: var(--text);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  &:focus {
+    outline: 2px solid rgba(195, 242, 51, 0.35);
+    outline-offset: 2px;
+  }
+  &:hover {
+    transform: translateY(-1px);
+  }
+  &--primary {
+    background: var(--accent);
+    color: #0a1b1d;
+    border-color: transparent;
+    font-weight: 700;
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
+  &--ghost {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+/* header/footer */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg-1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+  }
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 0;
+  line-height: 0;
+  block-size: 48px;
+  &__img {
+    display: block;
+    inline-size: auto;
+    block-size: 100%;
+    transform: scale(1.6);
+    transform-origin: left center;
+    will-change: transform;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  &-link {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    &:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+  }
+}
+
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(6, 24, 26, 0.5);
+  .container {
+    padding: 1.25rem 0;
+  }
+}
+
+/* hero */
+.hero {
+  padding: clamp(4rem, 10vw, 10rem) 0 3rem;
+  &__content {
+    text-align: center;
+  }
+  &__title {
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    line-height: 1.05;
+    margin: 0.25em 0;
+  }
+  &__tagline {
+    color: var(--muted);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin: 0 0 1.5rem;
+  }
+}
+
+/* features */
+.features {
+  padding: clamp(2rem, 6vw, 4rem) 0;
+}
+
+/* thumbnails row above cards */
+.features__images {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.feature-thumb {
+  display: block;
+  width: 75%;
+  height: auto;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+}
+
+/* specific tweak for the purple image */
+.feature-thumb[src*="purple.png"] {
+  width: 82.5%; // about 10% larger than the others
+}
+
+/* cards */
+.features__grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.feature-card {
+  background: #0b1f22;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 1rem;
+  &__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  &__title {
+    margin: 0.75rem 0 0.25rem;
+  }
+  &__text {
+    color: var(--muted);
+    margin: 0;
+  }
+}
+
+/* AR section */
+.ar-section {
+  padding: clamp(3rem, 7vw, 6rem) 0;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  &__title {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+  }
+  &__actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+/* model-viewer sized and transparent so the page gradient shows */
 model-viewer {
-  width: auto;
-  max-width: 1200px;
-  height: 700px;
-  background-color: #ffffff;
+  width: 100%;
+  max-width: $container-max;
+  height: clamp(420px, 70vh, 760px);
+  background: transparent;
+  background-color: transparent;
   margin: 0 auto;
 }
 
+/* hotspots */
 .Hotspot {
   background: url(../images/hotspot.svg) center no-repeat;
   border: 0;
@@ -13,25 +202,23 @@ model-viewer {
   width: 45px;
   height: 39px;
   transition: all 1s ease-in-out;
-}
-
-.Hotspot:not([data-visible]) {
-opacity: 0;
+  &:not([data-visible]) {
+    opacity: 0;
     width: 45px;
     height: 38px;
     pointer-events: none;
+  }
+  &:focus {
+    border: 4px solid rgb(0, 128, 200);
+    height: 32px;
+    outline: none;
+    width: 32px;
+  }
 }
 
-.Hotspot:focus {
-  border: 4px solid rgb(0, 128, 200);
-  height: 32px;
-  outline: none;
-  width: 32px;
-}
-
-
-.HotspotAnnotation{
-    visibility: hidden;
+/* annotations */
+.HotspotAnnotation {
+  visibility: hidden;
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
@@ -48,28 +235,38 @@ opacity: 0;
   top: 50%;
   width: max-content;
   text-align: left;
-}
-
-  .HotspotAnnotation p {
+  p {
     color: #333;
     line-height: 22px;
     font-weight: 300;
   }
-  
-  .HotspotAnnotation h2 {
+  h2 {
     font-size: 18px;
     margin-bottom: 5px;
   }
+}
 
+/* progress bar */
+model-viewer::part(default-progress-bar) {
+  height: 30px;
+  background-color: #e89b36;
+}
+model-viewer::part(default-progress-mask) {
+  display: none;
+}
 
-  /* Progress */
-  // Customize the progress bar
-  //The ::part CSS pseudo-element represents any element within a shadow tree that has a matching part attribute.
-  model-viewer::part(default-progress-bar) {
-    height: 30px;
-    background-color: #E89B36;
+/* optional inline expand class */
+.ar-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  model-viewer {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
   }
-  
-  model-viewer::part(default-progress-mask) {
-    display: none;
-  }
+}

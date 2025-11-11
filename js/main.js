@@ -1,6 +1,7 @@
-(() => {
-  const hotspots = document.querySelectorAll(".Hotspot");
+(function initEarbudsPage() {
+  const gsapRef = window.gsap;
 
+  const hotspots = document.querySelectorAll(".Hotspot");
   const infoBoxes = [
     {
       title: "Noise-cancelling microphones",
@@ -24,58 +25,112 @@
     },
   ];
 
-  //functions
-
   function loadInfo() {
-    infoBoxes.forEach((infoBox, index) => {
-      //console.log(index + 1);
-      //selected will be the infoBox on our page, e.g. hotspot-1, hotspot-2, etc.
-      let selected = document.querySelector(`#hotspot-${index + 1}`);
-      console.log(selected);
+    infoBoxes.forEach(function attachInfo(infoBox, index) {
+      const selected = document.querySelector(`#hotspot-${index + 1}`);
+      if (!selected) {
+        return;
+      }
 
-      //lets create an h2
       const titleElement = document.createElement("h2");
-      //lets populate the h2
       titleElement.textContent = infoBox.title;
 
-      //lets create a p
       const textElement = document.createElement("p");
-      //lets populate the p
       textElement.textContent = infoBox.text;
 
-      //lets create an img
-
       const imageElement = document.createElement("img");
-      //lets populate the img
-      imageElement.src = imageElement.alt = "";
+      imageElement.src = "";
+      imageElement.alt = "";
 
-      //lets add the h2 to the selected hotspot
       selected.appendChild(titleElement);
       selected.appendChild(textElement);
     });
   }
 
-  loadInfo();
-
   function showInfo() {
-    //console.log(this.slot);
-    //console.log(`#${this.slot}`);
-    //since the slot value matches the id value I can use the slot value as a selector to get to the div I want.
-    let selected = document.querySelector(`#${this.slot}`);
-    gsap.to(selected, { duration: 1, autoAlpha: 1 });
+    const selected = document.querySelector(`#${this.slot}`);
+    if (gsapRef) {
+      gsapRef.to(selected, { duration: 1, autoAlpha: 1 });
+    }
   }
 
   function hideInfo() {
-    //console.log(this.slot);
-    //console.log(`#${this.slot}`);
-    let selected = document.querySelector(`#${this.slot}`);
-    gsap.to(selected, { duration: 1, autoAlpha: 0 });
+    const selected = document.querySelector(`#${this.slot}`);
+    if (gsapRef) {
+      gsapRef.to(selected, { duration: 1, autoAlpha: 0 });
+    }
   }
 
-  hotspots.forEach(function (hotspot) {
+  function attachHotspotListeners(hotspot) {
     hotspot.addEventListener("mouseenter", showInfo);
     hotspot.addEventListener("mouseleave", hideInfo);
-  });
-})();
+  }
 
-// In this version, the event listeners use regular functions instead of arrow functions, so the "this" keyword inside the event listeners will refer to the DOM element that triggered the event.
+  loadInfo();
+  hotspots.forEach(attachHotspotListeners);
+
+  const root = document.documentElement;
+
+  function setGradientFromPoint(x, y) {
+    const vw = Math.max(
+      document.documentElement.clientWidth,
+      window.innerWidth || 0
+    );
+    const vh = Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight || 0
+    );
+    const px = Math.max(0, Math.min((x / vw) * 100, 100));
+    const py = Math.max(0, Math.min((y / vh) * 100, 100));
+    root.style.setProperty("--gx", px + "%");
+    root.style.setProperty("--gy", py + "%");
+  }
+
+  function handlePointerMove(e) {
+    setGradientFromPoint(e.clientX, e.clientY);
+  }
+
+  function handleTouchMove(e) {
+    const t = e.touches && e.touches[0];
+    if (!t) {
+      return;
+    }
+    setGradientFromPoint(t.clientX, t.clientY);
+  }
+
+  document.body.addEventListener("pointermove", handlePointerMove);
+  document.body.addEventListener("touchmove", handleTouchMove, {
+    passive: true,
+  });
+
+  const enterBtn = document.querySelector("#enter-fullscreen");
+  const exitBtn = document.querySelector("#exit-fullscreen");
+  const model = document.querySelector("#model");
+
+  function enterFullscreen() {
+    if (model && model.requestFullscreen) {
+      model.requestFullscreen();
+    }
+  }
+
+  function exitFullscreen() {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
+  }
+
+  function handleFsChange() {
+    const isFs = Boolean(document.fullscreenElement);
+    if (exitBtn) {
+      exitBtn.setAttribute("aria-hidden", isFs ? "false" : "true");
+    }
+  }
+
+  if (enterBtn) {
+    enterBtn.addEventListener("click", enterFullscreen);
+  }
+  if (exitBtn) {
+    exitBtn.addEventListener("click", exitFullscreen);
+  }
+  document.addEventListener("fullscreenchange", handleFsChange);
+})();

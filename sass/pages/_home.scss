@@ -1,0 +1,7 @@
+/* I avoid cross-module @extend; I set padding directly */
+#features {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+}
+#ar-experience {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+}

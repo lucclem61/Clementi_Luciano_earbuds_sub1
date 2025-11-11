@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 174.318 324.629">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #43ac9a;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-family: FreestyleScript-Regular, 'Freestyle Script';
+        font-size: 279.941px;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="43.572" y1="103.462" x2="130.746" y2="254.452" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16575e"/>
+      <stop offset="0" stop-color="#18585e"/>
+      <stop offset=".004" stop-color="#17575e"/>
+      <stop offset=".319" stop-color="#16575e"/>
+      <stop offset=".499" stop-color="#16535a"/>
+      <stop offset=".667" stop-color="#19494f"/>
+      <stop offset=".831" stop-color="#1d383c"/>
+      <stop offset=".991" stop-color="#222021"/>
+      <stop offset="1" stop-color="#231f20"/>
+    </linearGradient>
+  </defs>
+  <circle class="cls-3" cx="87.159" cy="178.957" r="87.159"/>
+  <path class="cls-1" d="M118.881,229.729c-32.452,19.629-69.482,17.811-89.111-14.64-19.629-32.452-5.031-67.723,27.421-87.351,32.452-19.629,70.468-16.182,90.097,16.27,19.629,32.452,4.045,66.093-28.407,85.721Z"/>
+  <text class="cls-2" transform="translate(63.891 233.048)"><tspan x="0" y="0">e</tspan></text>
+</svg>
