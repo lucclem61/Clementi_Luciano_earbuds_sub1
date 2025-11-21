@@ -97,7 +97,6 @@
             src="model/ear.glb.glb"
             camera-controls
             interaction-prompt="none"
-            poster="images/poster.webp"
             shadow-intensity="1"
             environment-image="images/aircraft_workshop_01_1k.hdr"
             crossorigin="anonymous"
@@ -107,7 +106,51 @@
             loading="eager"
             ar
             ar-modes="webxr scene-viewer"
-          ></model-viewer>
+            style="--min-hotspot-opacity: 1"
+          >
+            <!-- Hotspots: now locked with your current positions -->
+            <button
+              class="Hotspot"
+              slot="hotspot-1"
+              data-visibility-attribute="visible"
+              data-position="-0.2m 0m 0m"
+              data-normal="0m 1m 0m"
+              aria-label="Noise Cancelling"
+            >
+              <div class="HotspotAnnotation" id="hotspot-1">
+                <h3>Noise cancelling</h3>
+                <p>Dual mics reduce ambient noise.</p>
+              </div>
+            </button>
+
+            <button
+              class="Hotspot"
+              slot="hotspot-2"
+              data-visibility-attribute="visible"
+              data-position="0m 0m 0m"
+              data-normal="0m 1m 0m"
+              aria-label="Comfortable Grip"
+            >
+              <div class="HotspotAnnotation" id="hotspot-2">
+                <h3>Comfortable grip</h3>
+                <p>Contoured shell for a secure fit.</p>
+              </div>
+            </button>
+
+            <button
+              class="Hotspot"
+              slot="hotspot-3"
+              data-visibility-attribute="visible"
+              data-position="0.2m 0m 0m"
+              data-normal="0m 1m 0m"
+              aria-label="Battery Life"
+            >
+              <div class="HotspotAnnotation" id="hotspot-3">
+                <h3>Battery</h3>
+                <p>Up to 3 hours on a charge.</p>
+              </div>
+            </button>
+          </model-viewer>
         </div>
       </section>
     </main>
