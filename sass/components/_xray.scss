@@ -1,0 +1,78 @@
+@use "../abstracts" as a;
+
+#xray {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  background-image: url("../images/solid.jpg");
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+
+#divisor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("../images/xray.jpg");
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    background-color: #ffffff;
+  }
+}
+
+input[type="range"] {
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+  display: block;
+  height: 20px;
+  background: transparent;
+  border: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}

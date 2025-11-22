@@ -14,10 +14,15 @@
         </a>
         <nav class="nav" aria-label="Primary">
           <a href="#features" class="nav-link">Features</a>
+          <a href="#xray-section" class="nav-link">Compare Views</a>
           <a href="#ar-experience" class="nav-link">View Model</a>
         </nav>
       </div>
     </header>
+
+    <section id="explode-section">
+      <canvas id="explode-view"></canvas>
+    </section>
 
     <main>
       <section class="hero">
@@ -81,6 +86,16 @@
         </div>
       </section>
 
+      <section id="xray-section">
+        <div class="container">
+          <h2>X-ray View</h2>
+          <div id="xray">
+            <div id="divisor"></div>
+          </div>
+          <input type="range" id="slider" min="0" max="100" value="50" />
+        </div>
+      </section>
+
       <section id="ar-experience" class="ar-section">
         <div class="container">
           <div class="ar-section__header">
@@ -108,7 +123,6 @@
             ar-modes="webxr scene-viewer"
             style="--min-hotspot-opacity: 1"
           >
-            <!-- Hotspots: now locked with your current positions -->
             <button
               class="Hotspot"
               slot="hotspot-1"
@@ -117,10 +131,10 @@
               data-normal="0m 1m 0m"
               aria-label="Noise Cancelling"
             >
-              <div class="HotspotAnnotation" id="hotspot-1">
-                <h3>Noise cancelling</h3>
-                <p>Dual mics reduce ambient noise.</p>
-              </div>
+              <span class="HotspotAnnotation" id="hotspot-1">
+                <strong>Noise cancelling</strong>
+                <span>Dual mics reduce ambient noise.</span>
+              </span>
             </button>
 
             <button
@@ -131,10 +145,10 @@
               data-normal="0m 1m 0m"
               aria-label="Comfortable Grip"
             >
-              <div class="HotspotAnnotation" id="hotspot-2">
-                <h3>Comfortable grip</h3>
-                <p>Contoured shell for a secure fit.</p>
-              </div>
+              <span class="HotspotAnnotation" id="hotspot-2">
+                <strong>Comfortable grip</strong>
+                <span>Contoured shell for a secure fit.</span>
+              </span>
             </button>
 
             <button
@@ -145,10 +159,10 @@
               data-normal="0m 1m 0m"
               aria-label="Battery Life"
             >
-              <div class="HotspotAnnotation" id="hotspot-3">
-                <h3>Battery</h3>
-                <p>Up to 3 hours on a charge.</p>
-              </div>
+              <span class="HotspotAnnotation" id="hotspot-3">
+                <strong>Battery</strong>
+                <span>Up to 3 hours on a charge.</span>
+              </span>
             </button>
           </model-viewer>
         </div>
@@ -174,6 +188,7 @@
         <div class="site-footer__col site-footer__right">
           <nav class="nav" aria-label="Footer">
             <a href="#features" class="nav-link">Features</a>
+            <a href="#xray-section" class="nav-link">Compare Views</a>
             <a href="#ar-experience" class="nav-link">View Model</a>
           </nav>
         </div>
@@ -181,6 +196,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
     <script
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"

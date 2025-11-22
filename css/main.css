@@ -1,18 +1,5 @@
 @charset "UTF-8";
 /* tokens */
-:root {
-  --gx: 50%;
-  --gy: 35%;
-  --bg-1: #06181a;
-  --bg-2: #0d2a2d;
-  --bg-3: #12373b;
-  --text: #e9f3f4;
-  --muted: #9fb4b6;
-  --accent: #c3f233;
-  --card: #0b1f22;
-  --surface: #0f262a;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -24,9 +11,9 @@ body {
 
 body {
   margin: 0;
-  color: var(--text);
+  color: #e9f3f4;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  background: radial-gradient(1200px 800px at var(--gx) var(--gy), rgba(195, 242, 51, 0.1), transparent 60%), radial-gradient(900px 700px at calc(var(--gx) + 10%) calc(var(--gy) + 20%), rgba(18, 55, 59, 0.65), transparent 65%), linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 50%, var(--bg-3) 100%);
+  background: #06181a;
 }
 
 .container {
@@ -39,7 +26,7 @@ body {
 }
 
 .muted {
-  color: var(--muted);
+  color: #9fb4b6;
   margin: 0;
 }
 
@@ -293,7 +280,7 @@ model-viewer {
   top: 50%;
   left: calc(100% + 10px);
   transform: translateY(-50%);
-  background: #fff;
+  background: #ffffff;
   color: #0a1b1d;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
@@ -314,10 +301,94 @@ model-viewer {
 }
 .HotspotAnnotation p {
   margin: 0;
-  color: #333;
+  color: #333333;
+}
+
+#xray {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  background-image: url("../images/solid.jpg");
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+
+#divisor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("../images/xray.jpg");
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+#divisor::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 6px;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+input[type=range] {
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+  display: block;
+  height: 20px;
+  background: transparent;
+  border: none;
+}
+
+/* hide default track – webkit */
+input[type=range]::-webkit-slider-runnable-track {
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+/* hide default track – firefox */
+input[type=range]::-moz-range-track {
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+/* slider thumb – webkit */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* slider thumb – firefox */
+input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
 }
 
 #features {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+}
+
+#xray-section {
   padding: clamp(3rem, 6vw, 6rem) 0;
 }
 
