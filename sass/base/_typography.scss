@@ -1,53 +1,33 @@
 @use "../abstracts" as *;
 
-:root {
-  --gx: 50%;
-  --gy: 35%;
-  --bg-1: #06181a;
-  --bg-2: #0d2a2d;
-  --bg-3: #12373b;
-  --text: #e9f3f4;
-  --muted: #9fb4b6;
-  --accent: #c3f233;
-  --card: #0b1f22;
-  --surface: #0f262a;
-}
-
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
-  color: var(--text);
+  color: #e9f3f4;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
     Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  background: radial-gradient(
-      1200px 800px at var(--gx) var(--gy),
-      rgba(195, 242, 51, 0.1),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 700px at calc(var(--gx) + 10%) calc(var(--gy) + 20%),
-      rgba(18, 55, 59, 0.65),
-      transparent 65%
-    ),
-    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 50%, var(--bg-3) 100%);
+  background: #06181a;
 }
 
 .container {
   width: min(#{$container-max}, 90%);
   margin-inline: auto;
 }
+
 .section-pad {
   padding: clamp(3rem, 6vw, 6rem) 0;
 }
 
 .muted {
-  color: var(--muted);
+  color: #9fb4b6;
   margin: 0;
 }
