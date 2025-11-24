@@ -1,32 +1,52 @@
-Start# eChord Earbuds
+eChord Earbuds Project 🎧
+This project showcases an interactive product page for the eChord Earbuds. It includes modern front end features such as a 3D model viewer, scroll animations, and responsive design across all screen sizes.
 
-An interactive promotional page for the **eChord Earbuds** brand.  
-It includes a 3D model viewer, responsive layout, and smooth visual effects.
+Table of Contents 📋
+About
+Skills
+Languages
+Features
+Installation
+Usage
+Contact
 
----
+About 👨🏻‍💻
+This project was created to demonstrate front end development skills using real world interactive components. The goal is to present an appealing and engaging product experience.
 
-## Features
-- View a 3D model of the earbuds  
-- Responsive layout built with SASS    
-- Fullscreen model viewing button   
+Skills 🥷
+Responsive design
+Front end development
+Animation and interaction
 
----
 
-## Built With
-- HTML5  
-- SASS (SCSS)  
-- JavaScript  
-- GSAP 3  
-- Google Model-Viewer  
+Languages 🛠️
+HTML
+Sass
+JavaScript
 
----
+Frameworks and Libraries 📚
+Greensock
+Google Model Viewer
 
-## How to Use
-1. Open `index.html` in your browser.  
-2. To edit styles, modify files in the `sass/` folder and compile to `css/main.css`.  
-3. The 3D model file is in `model/ear.glb.glb`.  
+Features ⭐
+3D model viewer
+Scroll driven explode animation
+X ray comparison slider
+Fullscreen model viewer
+Responsive layout for desktop tablet and mobile
+Smooth animations
 
----
+Installation 📦
+Clone the repository
+Open the project folder
+No installation is required
 
-## Author
-**Luciano Clementi**  
+Usage 🚀
+Open the index.html file in any browser
+To edit the styles, open the Sass folder and compile to css main.css
+
+Contact 📱
+If you have any questions or want to connect you can reach me here:
+l_clementi@fanshaweonline.ca
+
+Luciano Clementi
