@@ -1,4 +1,4 @@
-(function mainInit() {
+function mainInit() {
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
   }
@@ -6,7 +6,7 @@
   initModelViewer();
   initXraySlider();
   initExplodeAnimation();
-})();
+}
 
 function initModelViewer() {
   const model = document.querySelector(".model");
@@ -134,3 +134,5 @@ function initExplodeAnimation() {
   loadFrames();
   images[0].addEventListener("load", handleFirstImageLoad);
 }
+
+mainInit();

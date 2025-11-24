@@ -11,3 +11,23 @@
   max-width: 1200px;
   height: auto;
 }
+
+@media (max-width: 900px) {
+  #explode-section {
+    padding: 3rem 0;
+  }
+
+  #explode-view {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  #explode-section {
+    padding: 2.5rem 0;
+  }
+
+  #explode-view {
+    max-width: 100%;
+  }
+}

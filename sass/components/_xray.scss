@@ -1,5 +1,3 @@
-@use "../abstracts" as a;
-
 #xray {
   position: relative;
   width: 100%;
@@ -75,4 +73,14 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   border: none;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  #xray {
+    max-width: 100%;
+  }
+
+  input[type="range"] {
+    max-width: 100%;
+  }
 }
