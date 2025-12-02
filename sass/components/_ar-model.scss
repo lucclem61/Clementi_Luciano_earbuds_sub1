@@ -232,12 +232,71 @@ html {
   }
 }
 
+.ar-media {
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.ar-media__loading {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ar-media__loading svg {
+  width: 64px;
+  height: 64px;
+}
+
+.ar-media__image-wrapper {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 1.5rem;
+}
+
+.ar-media__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.ar-media__model {
+  display: none;
+}
+
+.ar-media.is-loading .ar-media__image-wrapper,
+.ar-media.is-loading .ar-media__model {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ar-media.is-loading .ar-media__loading {
+  display: flex;
+}
+
 model-viewer {
   width: 100%;
   max-width: $container-max;
   height: clamp(420px, 70vh, 760px);
   background: transparent;
   margin: 0 auto;
+}
+
+.ar-status {
+  margin-top: 1.5rem;
+  min-height: 1.5rem;
+  text-align: center;
+}
+
+.ar-status__message {
+  margin: 0;
+  color: #9fb4b6;
+  font-size: 0.95rem;
 }
 
 .Hotspot {
@@ -261,7 +320,7 @@ model-viewer {
   top: 50%;
   left: calc(100% + 10px);
   transform: translateY(-50%);
-  background: #fff;
+  background: #ffffff;
   color: #0a1b1d;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
@@ -286,7 +345,7 @@ model-viewer {
   span {
     display: block;
     margin: 0;
-    color: #333;
+    color: #333333;
   }
 }
 
@@ -331,5 +390,19 @@ model-viewer {
   .feature-thumb {
     max-width: 140px;
     height: 140px;
+  }
+
+  .ar-status__message {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .ar-media__image-wrapper {
+    display: none;
+  }
+
+  .ar-media__model {
+    display: block;
   }
 }

@@ -110,75 +110,240 @@
             </div>
           </div>
 
-          <model-viewer
-            class="model"
-            src="model/earbuds.gltf"
-            camera-controls
-            interaction-prompt="none"
-            shadow-intensity="1"
-            environment-image="images/aircraft_workshop_01_1k.hdr"
-            crossorigin="anonymous"
-            exposure="1.7"
-            reveal="auto"
-            preload
-            loading="eager"
-            ar
-            ar-modes="webxr scene-viewer"
-            style="--min-hotspot-opacity: 1"
-          >
-            <!-- 🔄 SWAPPED LABELS -->
+          <div class="ar-media">
+            <div class="ar-media__image-wrapper">
+              <img
+                src="images/mint.png"
+                alt="eChord earbuds static view"
+                class="ar-media__image"
+              />
+            </div>
 
-            <!-- 1. BACK OF MODEL — NOW BATTERY LABEL -->
-            <button
-              class="Hotspot"
-              slot="hotspot-1"
-              data-visibility-attribute="visible"
-              data-position="22.114881038306805m 76.41863141465969m 92.72411936367459m"
-              data-normal="0m 3.422854333301474e-8m 0.9999999999999996m"
-              aria-label="Battery Life"
-            >
-              <span class="HotspotAnnotation" id="hotspot-1">
-                <strong>Battery</strong>
-                <span>Up to three hours of playtime on a single charge.</span>
-              </span>
-            </button>
+            <div class="ar-media__loading">
+              <svg
+                fill="hsl(228, 97%, 42%)"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <circle cx="12" cy="3" r="1">
+                    <animate
+                      id="spinner_7Z73"
+                      begin="0;spinner_tKsu.end-0.5s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="16.5" cy="4.21" r="1">
+                    <animate
+                      id="spinner_Wd87"
+                      begin="spinner_7Z73.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="7.5" cy="4.21" r="1">
+                    <animate
+                      id="spinner_tKsu"
+                      begin="spinner_9Qlc.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="19.79" cy="7.5" r="1">
+                    <animate
+                      id="spinner_lMMO"
+                      begin="spinner_Wd87.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="4.21" cy="7.5" r="1">
+                    <animate
+                      id="spinner_9Qlc"
+                      begin="spinner_Khxv.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="21" cy="12" r="1">
+                    <animate
+                      id="spinner_5L9t"
+                      begin="spinner_lMMO.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="3" cy="12" r="1">
+                    <animate
+                      id="spinner_Khxv"
+                      begin="spinner_ld6P.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="19.79" cy="16.5" r="1">
+                    <animate
+                      id="spinner_BfTD"
+                      begin="spinner_5L9t.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="4.21" cy="16.5" r="1">
+                    <animate
+                      id="spinner_ld6P"
+                      begin="spinner_XyBs.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="16.5" cy="19.79" r="1">
+                    <animate
+                      id="spinner_7gAK"
+                      begin="spinner_BfTD.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="7.5" cy="19.79" r="1">
+                    <animate
+                      id="spinner_XyBs"
+                      begin="spinner_HiSl.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <circle cx="12" cy="21" r="1">
+                    <animate
+                      id="spinner_HiSl"
+                      begin="spinner_7gAK.begin+0.1s"
+                      attributeName="r"
+                      calcMode="spline"
+                      dur="0.6s"
+                      values="1;2;1"
+                      keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                    />
+                  </circle>
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    dur="6s"
+                    values="360 12 12;0 12 12"
+                    repeatCount="indefinite"
+                  />
+                </g>
+              </svg>
+            </div>
 
-            <!-- 2. EARPIECE — NOW NOISE CANCELLING LABEL -->
-            <button
-              class="Hotspot"
-              slot="hotspot-2"
-              data-visibility-attribute="visible"
-              data-position="2.4492803380076666m 10.895113621640228m -85.35108450441453m"
-              data-normal="-0.09319883119990514m 0.7267314834938743m -0.6805698559014823m"
-              aria-label="Noise Cancelling"
+            <model-viewer
+              class="model ar-media__model"
+              src="model/modelFixed.glb"
+              camera-controls
+              interaction-prompt="none"
+              shadow-intensity="1"
+              environment-image="images/aircraft_workshop_01_1k.hdr"
+              crossorigin="anonymous"
+              exposure="1.7"
+              reveal="auto"
+              preload
+              loading="eager"
+              ar
+              ar-modes="webxr scene-viewer"
+              style="--min-hotspot-opacity: 1"
             >
-              <span class="HotspotAnnotation" id="hotspot-2">
-                <strong>Noise cancelling</strong>
-                <span
-                  >Dual microphones reduce ambient noise for clearer
-                  calls.</span
-                >
-              </span>
-            </button>
+              <button
+                class="Hotspot"
+                slot="hotspot-1"
+                data-visibility-attribute="visible"
+                data-position="-3.4531841128939362m -2.677009621537202m 5.516505441925659m"
+                data-normal="0.12213653619958871m -0.17148484851544582m 0.9775866269823874m"
+                aria-label="Battery Life"
+              >
+                <span class="HotspotAnnotation" id="hotspot-1"></span>
+              </button>
 
-            <!-- 3. SIDE OF BODY — COMFORTABLE GRIP -->
-            <button
-              class="Hotspot"
-              slot="hotspot-3"
-              data-visibility-attribute="visible"
-              data-position="15m 40m 20m"
-              data-normal="0.4m 0.1m 0.9m"
-              aria-label="Comfortable Grip"
-            >
-              <span class="HotspotAnnotation" id="hotspot-3">
-                <strong>Comfortable grip</strong>
-                <span>
-                  Contoured body designed for a natural thumb and index finger
-                  hold.
-                </span>
-              </span>
-            </button>
-          </model-viewer>
+              <button
+                class="Hotspot"
+                slot="hotspot-2"
+                data-visibility-attribute="visible"
+                data-position="7.817504967572006m 8.02138937984829m 1.647033457060295m"
+                data-normal="0.05934875837953144m 0.20695489382665305m 0.9765487170643392m"
+                aria-label="Noise Cancelling"
+              >
+                <span class="HotspotAnnotation" id="hotspot-2"></span>
+              </button>
+
+              <button
+                class="Hotspot"
+                slot="hotspot-3"
+                data-visibility-attribute="visible"
+                data-position="-11.576788139600403m -2.6046741793994777m -8.627433558178163m"
+                data-normal="-0.9470358054103406m 0.08775172170380677m -0.3089058410079118m"
+                aria-label="Comfortable Grip"
+              >
+                <span class="HotspotAnnotation" id="hotspot-3"></span>
+              </button>
+            </model-viewer>
+          </div>
+
+          <div class="ar-status" aria-live="polite">
+            <div
+              class="ar-status__spinner"
+              id="ar-loading-spinner"
+              aria-hidden="true"
+            ></div>
+            <p class="ar-status__message" id="ar-status-message">
+              Hover over the hotspots to learn more.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="materials-section" class="materials-section">
+        <div class="container">
+          <h2 class="materials-section__title">Materials</h2>
+          <ul id="material-list" class="materials-list"></ul>
+
+          <template id="material-template">
+            <li class="materials-list__item">
+              <h3 class="material-heading"></h3>
+              <p class="material-description"></p>
+            </li>
+          </template>
         </div>
       </section>
     </main>
