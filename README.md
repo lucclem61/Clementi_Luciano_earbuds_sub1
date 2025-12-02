@@ -1,62 +1,58 @@
-**eChord Earbuds Project 🎧**
+# eChord Earbuds Project
 
-This project showcases an interactive product page for the eChord Earbuds. It includes modern front end features such as a 3D model viewer, scroll animations, and responsive design across all screen sizes.
+This project is an interactive product page for the eChord Earbuds. It includes a 3D model viewer, scroll-based explode animation, an x-ray comparison slider, and dynamic content loaded from an external API. The layout adjusts for mobile, tablet, and desktop.
 
-**Table of Contents 📋**
+## About
 
-About
-Skills
-Languages
-Features
-Installation
-Usage
-Contact
+The goal of this project is to demonstrate front-end development skills using real interactive components and structured SASS. Hotspot information and materials are pulled from an API and displayed using JavaScript and the HTML template element.
 
-**About 👨🏻‍💻**
+## Features
 
-This project was created to demonstrate front end development skills using real world interactive components. The goal is to present an appealing and engaging product experience.
+- Mobile shows a static product image  
+- Tablet and desktop display the interactive 3D model  
+- Three hotspots populated with API data  
+- Materials section populated from API using `<template>`  
+- Loading spinner for the AR section  
+- Scroll-driven explode animation using GSAP  
+- Responsive layout across all screen sizes
 
-**Skills 🥷**
+## Technologies Used
 
-Responsive design
-Front end development
-Animation and interaction
+HTML  
+SASS  
+JavaScript  
+GSAP + ScrollTrigger  
+Google Model Viewer  
+Fetch API (AJAX)
 
+## API Endpoints
 
-**Languages 🛠️**
+Hotspot info:  
+https://swiftpixel.com/earbud/api/infoboxes
 
-HTML
-Sass
-JavaScript
+Materials info:  
+https://swiftpixel.com/earbud/api/materials
 
-**Frameworks and Libraries 📚**
+## Installation
 
-Greensock
-Google Model Viewer
+Clone the repository and open `index.html` in a browser.  
+Compile SASS to generate `css/main.css` if making style changes.
 
-**Features ⭐**
+## Usage
 
-3D model viewer
-Scroll driven explode animation
-X ray comparison slider
-Fullscreen model viewer
-Responsive layout for desktop tablet and mobile
-Smooth animations
+Scroll through the page to view animations and interactions.  
+Hover over hotspots on the 3D model (tablet and desktop).  
+View dynamic materials in the Materials section.
 
-**Installation 📦**
+## License 
+MIT
 
-Clone the repository
-Open the project folder
-No installation is required
+## Contact
 
-**Usage 🚀**
-
-Open the index.html file in any browser
-To edit the styles, open the Sass folder and compile to css main.css
-
-**Contact 📱**
+Luciano Clementi  
+l_clementi@fanshaweonline.ca
 
 If you have any questions or want to connect you can reach me here:
 l_clementi@fanshaweonline.ca
 
-Luciano Clementi
+
